@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Name Display</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .text {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .char {
+            font-size: 48px;
+            color: #555;
+            margin: 10px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .char.on {
+            color: #00ff00; /* LED color */
+            text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="text" id="text">
+        <span class="char">M</span>
+        <span class="char">y</span>
+        <span class="char">&nbsp;</span>
+        <span class="char">N</span>
+        <span class="char">a</span>
+        <span class="char">m</span>
+        <span class="char">e</span>
+        <span class="char">&nbsp;</span>
+        <span class="char">i</span>
+        <span class="char">s</span>
+        <span class="char">&nbsp;</span>
+        <span class="char">N</span>
+        <span class="char">A</span>
+        <span class="char">S</span>
+        <span class="char">I</span>
+        <span class="char">M</span>
+    </div>
+
+    <script>
+        function animateText() {
+            let chars = document.querySelectorAll('.char');
+            chars.forEach((char, index) => {
+                setTimeout(() => {
+                    char.classList.add('on');
+                    setTimeout(() => {
+                        char.classList.remove('on');
+                    }, 800); // Duration of light on state
+                }, index * 200); // Delay between each character lighting up
+            });
+        }
+
+        // Continuously loop the animation
+        setInterval(animateText, 3000); // Interval duration should be longer than the total animation time
+
+        // Initial animation
+        animateText();
+    </script>
+</body>
+</html>

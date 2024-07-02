@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change HTML Attributes</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .area{
+            margin: auto;
+            margin-top: 100px;
+        }
+        .light{
+            height: 85%;
+            text-align: center;
+        }
+        .downBtn{
+            text-align: center;
+
+        }
+        .light1{
+            /* height: 150px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: #f7dc0e;
+            margin: auto;
+            margin-top: 20px;
+            display: none; */
+            width: 100px;
+            height: 100px;
+            background-color: #ffeb3b;
+            border-radius: 50%;
+            box-shadow: 0 0 30px #ffeb3b;
+            margin: 50px auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="area">
+        <div class="light">
+            <div class="light1" id="L1"></div>
+        </div>
+        <div class="downBtn">
+            <button onclick="document.getElementById('L1').style.display = 'block';"  style="background: #ff0000;color: rgb(0, 0, 0); border-radius: 40%; box-shadow: 2px 2px 5px white; margin-right: 10px ;" type="button">ON</button>
+            <button onclick="document.getElementById('L1').style.display = 'none';"   style="background: #f0ecec;color: rgb(0, 0, 0); border-radius: 40%; box-shadow: 2px 2px 5px white; margin-right: 10px ;" type="button">OFF</button>
+        </div>
+    </div>
+
+
+
+    <!-- <script>
+        let L1 = document.getElementById("light1");
+        console.log(L1.style="display:none");
+    </script> -->
+</body>
+</html>
